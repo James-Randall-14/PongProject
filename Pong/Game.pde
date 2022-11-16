@@ -26,7 +26,7 @@ public class Game {
     // Update the player1 with the player's input
     p1.update(p1.playerDV(dt));
     // Update the player2 with the AI's input
-    p2.update(p2.playerDV(dt));
+    p2.update(p2.aiDV(b.location.y));
 
     if (gameState.equals("play")) {
       b.update(dt);
