@@ -111,19 +111,14 @@ public class Ball {
       x1 = -location.x;
       m = velocity.y / velocity.x;
     }
-
-    if (velocity.y > 0) { //Issues here
-      y1 = -abs(m * x1 - location.y) + height - 40;
-    } else if (velocity.y < 0) {
-      y1 = abs(m * x1 + location.y) - 40;
+    
+    y1 = m * x1 + location.y;
+    if (y1 < 0) {
+      y1 *= -1 * (1.04);
+    } else if (y1 > height) {
+      y1 = height - (y1 - height) * (1.04);
     }
 
-    // Using + location.y is what is causing the bug
-    //y1 = abs(m * x1) - 30;   
-    //the 30 is to offset for height of paddle + ball
-    print("y1: ");
-    println(y1);
-    circle(width - 30, y1, 5);
-    return y1;
+    return y1 - 40;
   }
 }

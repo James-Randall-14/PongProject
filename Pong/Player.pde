@@ -6,7 +6,7 @@ public class Player {
   private char upButton;
   private char downButton;
   private int score = 0;
-  private final int PADDLE_SPEED = 40;
+  private final int PADDLE_SPEED = 10;
   private float pErr;
   private float iErr;
   private float dErr;
