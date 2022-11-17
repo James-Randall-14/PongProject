@@ -1,7 +1,7 @@
 Game g;
 
 void setup() {
-  fullScreen();
+  size(960, 540);
   g = new Game(this);
   frameRate(120);
 }
