@@ -9,8 +9,8 @@ public class Ball {
   public Ball(PApplet p) {
     location = new PVector(width / 2 - 10, height / 2 - 10);
     velocity = new PVector(0, 0);
-    xSpeed = random(250, 350);
-    ySpeed = random(175, 225);
+    xSpeed = random(350, 550);
+    ySpeed = random(100, 250);
     acceleration = new PVector(0.01, 0.005);
     randomizeDirections();
     cieling = new SoundFile(p, "cieling.wav");
@@ -105,20 +105,20 @@ public class Ball {
     float x1 = 0;
     float y1 = height / 2 - 40;
     if (velocity.x > 0) {
-      x1 = width - location.x;
+      x1 = width - 30 - location.x;
       m = velocity.y / velocity.x;
     } else if (velocity.x < 0) {
-      x1 = -location.x;
+      x1 = -location.x + 30;
       m = velocity.y / velocity.x;
     }
     
     y1 = m * x1 + location.y;
     if (y1 < 0) {
-      y1 *= -1 * (1.04);
+      y1 *= -1 * (1.03);
     } else if (y1 > height) {
-      y1 = height - (y1 - height) * (1.04);
+      y1 = height - (y1 - height) * (1.03);
     }
-
+    
     return y1 - 40;
   }
 }

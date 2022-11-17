@@ -22,9 +22,9 @@ public class Player {
     pErr = 0;
     iErr = 0;
     dErr = 0;
-    pGain = 2.4;
-    iGain = 0;
-    dGain = 0.1;
+    pGain = 2;
+    iGain = 6;
+    dGain = 0;
   }
 
   public float getX() {
@@ -88,7 +88,7 @@ public class Player {
     }
     
     desiredVel.setMag(desiredSpeed);
-    return desiredVel.y; // JUST TO GET RID OF ERRORS FOR NOW. DO NOT FORGET TO REMOVE
+    return desiredVel.y;
   }
 
   // Takes desired velocity and accelerates to it
