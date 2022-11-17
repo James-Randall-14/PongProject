@@ -106,7 +106,5 @@ public class Player {
     if (location.y <= 0 || location.y >= height - 80) {
       velocity.mult(0);
     }
-    print("pos: ");
-    println(location.y);
   }
 }
