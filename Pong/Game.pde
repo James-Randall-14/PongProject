@@ -26,7 +26,7 @@ public class Game {
     // Update the player1 with the player's input
     p1.update(p1.playerDV(dt));
     // Update the player2 with the AI's input
-    p2.update(p2.aiDV(b.location.y));
+    p2.update(p2.aiDV(b.calcY()));
 
     if (gameState.equals("play")) {
       b.update(dt);
@@ -87,7 +87,7 @@ public class Game {
   }
 
   void checkForVictory() {
-    if (p1.getScore() == 3 || p2.getScore() == 3) {
+    if (p1.getScore() == 9 || p2.getScore() == 9) {
       gameState = "victory";
       victory.play();
     }

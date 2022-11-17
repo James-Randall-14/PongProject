@@ -99,4 +99,31 @@ public class Ball {
       return false;
     }
   }
+  
+  public float calcY() {
+    float m = 0;
+    float x1 = 0;
+    float y1 = height / 2 - 40;
+    if (velocity.x > 0) {
+      x1 = width - location.x;
+      m = velocity.y / velocity.x;
+    } else if (velocity.x < 0) {
+      x1 = -location.x;
+      m = velocity.y / velocity.x;
+    }
+
+    if (velocity.y > 0) { //Issues here
+      y1 = -abs(m * x1 - location.y) + height - 40;
+    } else if (velocity.y < 0) {
+      y1 = abs(m * x1 + location.y) - 40;
+    }
+
+    // Using + location.y is what is causing the bug
+    //y1 = abs(m * x1) - 30;   
+    //the 30 is to offset for height of paddle + ball
+    print("y1: ");
+    println(y1);
+    circle(width - 30, y1, 5);
+    return y1;
+  }
 }

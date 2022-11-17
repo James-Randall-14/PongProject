@@ -6,7 +6,7 @@ public class Player {
   private char upButton;
   private char downButton;
   private int score = 0;
-  private final int PADDLE_SPEED = 10;
+  private final int PADDLE_SPEED = 40;
   private float pErr;
   private float iErr;
   private float dErr;
@@ -106,5 +106,7 @@ public class Player {
     if (location.y <= 0 || location.y >= height - 80) {
       velocity.mult(0);
     }
+    print("pos: ");
+    println(location.y);
   }
 }

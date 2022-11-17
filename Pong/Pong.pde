@@ -8,4 +8,5 @@ void setup() {
 
 void draw() {
   g.run(1 / frameRate);
+  line(0, height / 2, width, height / 2);
 }
