@@ -39,6 +39,9 @@ public class Player {
   public float getHeight() {
     return pHeight;
   }
+  public float getYVel() {
+    return velocity.y;
+  }
   public int getScore() {
     return score;
   }

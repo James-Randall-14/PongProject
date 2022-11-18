@@ -44,10 +44,10 @@ public class Game {
       }
 
       if (b.collides(p1)) {
-        b.flipDirection();
+        b.flipDirection(p1);
         hit.play();
       } else if (b.collides(p2)) {
-        b.flipDirection();
+        b.flipDirection(p2);
         hit.play();
       }
 

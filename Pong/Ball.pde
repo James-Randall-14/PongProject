@@ -60,8 +60,10 @@ public class Ball {
     }
   }
 
-  public void flipDirection() {
+  public void flipDirection(Player p) {
     xSpeed *= -1.03;
+    ySpeed += p.getYVel() * 40;
+    print(p.getYVel());
   }
 
   public boolean collides(Player p) {
